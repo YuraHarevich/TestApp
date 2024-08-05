@@ -24,6 +24,15 @@ public class SkuDTO {
 
     private double price;
 
+    @Override
+    public String toString() {
+        return "SkuDTO{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                '}';
+    }
 
     public Sku toSku(Product product){
         return new Sku(id,code,color,price,product);

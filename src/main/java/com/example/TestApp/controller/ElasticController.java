@@ -6,6 +6,7 @@ import com.example.TestApp.exception.GetProductException;
 import com.example.TestApp.exception.SaveException;
 import com.example.TestApp.response.MyErrorResponse;
 import com.example.TestApp.service.ElasticService;
+import com.example.TestApp.service.LoadDataService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +20,11 @@ import java.util.stream.Collectors;
 @RequestMapping("elastic")
 public class ElasticController {
     private final ElasticService service;
+    private final LoadDataService loadDataService;
 
-    public ElasticController(ElasticService service) {
+    public ElasticController(ElasticService service, LoadDataService loadDataService) {
         this.service = service;
+        this.loadDataService = loadDataService;
     }
 
     @PostMapping("/save")
@@ -33,7 +36,10 @@ public class ElasticController {
         return service.getAll();
     }
 
-
+    @GetMapping("/load")
+    public void load(){
+       loadDataService.fetchDataAndSave();
+    }
 
     //~~~~~~~~~~~~~EXCEPTION HANDLING~~~~~~~~~~~~~~
     @ExceptionHandler

@@ -33,6 +33,14 @@ public class Sku {
     public SkuDTO toSkuDTO(){
         return new SkuDTO(id,code,color,price);
     }
-
-
+    @Override
+    public String toString() {
+        return "Sku{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", product=" + product +
+                '}';
+    }
 }
