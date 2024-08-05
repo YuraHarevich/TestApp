@@ -2,8 +2,20 @@ version: "3.1"
 
 volumes:
   postgres:
+  elasticsearch_data:
 
 services:
+  elasticsearch:
+    image: elasticsearch:8.14.3
+    environment:
+      - node.name=es01
+      - cluster.name=es-cluster
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
   postgres:
     image: postgres:13.3
     restart: always
@@ -20,5 +32,6 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
+      - elasticsearch
     env_file:
       - src/main/resources/secret.env

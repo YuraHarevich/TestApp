@@ -28,7 +28,7 @@ public class DatabaseService {
         repository.save(product);
     }
 
-    public List<Product> get(){
+    public List<Product> getAll(){
         return repository.findAll();
     }
 }
