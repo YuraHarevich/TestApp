@@ -1,0 +1,392 @@
+[
+  {
+    "name": "bicycle",
+    "countryOfProduction": "French Polynesia",
+    "active": false,
+    "skus": [
+      {
+        "code": 7344,
+        "color": "red",
+        "price": 37.02
+      },
+      {
+        "code": 3419,
+        "color": "red",
+        "price": 41.77
+      },
+      {
+        "code": 4537,
+        "color": "red",
+        "price": 35.92
+      }
+    ]
+  },
+  {
+    "name": "car",
+    "countryOfProduction": "Myanmar",
+    "active": true,
+    "skus": [
+      {
+        "code": 1607,
+        "color": "blue",
+        "price": 17.34
+      },
+      {
+        "code": 2370,
+        "color": "red",
+        "price": 28.44
+      },
+      {
+        "code": 9181,
+        "color": "blue",
+        "price": 41.62
+      }
+    ]
+  },
+  {
+    "name": "notebook",
+    "countryOfProduction": "Argentina",
+    "active": true,
+    "skus": [
+      {
+        "code": 1467,
+        "color": "green",
+        "price": 30.62
+      },
+      {
+        "code": 8030,
+        "color": "purple",
+        "price": 15.41
+      },
+      {
+        "code": 5950,
+        "color": "green",
+        "price": 46.42
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "countryOfProduction": "Venezuela",
+    "active": true,
+    "skus": [
+      {
+        "code": 9314,
+        "color": "blue",
+        "price": 23.84
+      },
+      {
+        "code": 8679,
+        "color": "blue",
+        "price": 24.29
+      }
+    ]
+  },
+  {
+    "name": "table",
+    "countryOfProduction": "Namibia",
+    "active": true,
+    "skus": [
+      {
+        "code": 2665,
+        "color": "red",
+        "price": 28.64
+      },
+      {
+        "code": 1725,
+        "color": "blue",
+        "price": 36.78
+      },
+      {
+        "code": 9047,
+        "color": "green",
+        "price": 10.91
+      }
+    ]
+  },
+  {
+    "name": "notebook",
+    "countryOfProduction": "Paraguay",
+    "active": false,
+    "skus": [
+      {
+        "code": 9171,
+        "color": "purple",
+        "price": 35.21
+      },
+      {
+        "code": 4074,
+        "color": "purple",
+        "price": 10.43
+      }
+    ]
+  },
+  {
+    "name": "pen",
+    "countryOfProduction": "St. Pierre and Miquelon",
+    "active": false,
+    "skus": [
+      {
+        "code": 7064,
+        "color": "green",
+        "price": 44.63
+      },
+      {
+        "code": 3707,
+        "color": "green",
+        "price": 24.81
+      }
+    ]
+  },
+  {
+    "name": "car",
+    "countryOfProduction": "Sierra Leone",
+    "active": false,
+    "skus": [
+      {
+        "code": 1862,
+        "color": "purple",
+        "price": 44.23
+      },
+      {
+        "code": 2991,
+        "color": "green",
+        "price": 22.89
+      }
+    ]
+  },
+  {
+    "name": "hat",
+    "countryOfProduction": "Canada",
+    "active": false,
+    "skus": [
+      {
+        "code": 1825,
+        "color": "purple",
+        "price": 44.94
+      },
+      {
+        "code": 1925,
+        "color": "blue",
+        "price": 30.93
+      }
+    ]
+  },
+  {
+    "name": "socks",
+    "countryOfProduction": "Malaysia",
+    "active": true,
+    "skus": [
+      {
+        "code": 7646,
+        "color": "green",
+        "price": 48.57
+      },
+      {
+        "code": 1959,
+        "color": "red",
+        "price": 30.48
+      }
+    ]
+  },
+  {
+    "name": "eracer",
+    "countryOfProduction": "China",
+    "active": false,
+    "skus": [
+      {
+        "code": 2223,
+        "color": "red",
+        "price": 32.72
+      },
+      {
+        "code": 5502,
+        "color": "blue",
+        "price": 37.73
+      },
+      {
+        "code": 4036,
+        "color": "purple",
+        "price": 17.43
+      }
+    ]
+  },
+  {
+    "name": "car",
+    "countryOfProduction": "Uruguay",
+    "active": false,
+    "skus": [
+      {
+        "code": 5005,
+        "color": "blue",
+        "price": 48.47
+      },
+      {
+        "code": 4995,
+        "color": "purple",
+        "price": 33.74
+      }
+    ]
+  },
+  {
+    "name": "bicycle",
+    "countryOfProduction": "Greenland",
+    "active": true,
+    "skus": [
+      {
+        "code": 3418,
+        "color": "blue",
+        "price": 25.93
+      },
+      {
+        "code": 3066,
+        "color": "green",
+        "price": 14.08
+      }
+    ]
+  },
+  {
+    "name": "car",
+    "countryOfProduction": "Fiji",
+    "active": true,
+    "skus": [
+      {
+        "code": 1604,
+        "color": "purple",
+        "price": 17.53
+      },
+      {
+        "code": 3813,
+        "color": "purple",
+        "price": 37.75
+      },
+      {
+        "code": 1546,
+        "color": "purple",
+        "price": 43.78
+      }
+    ]
+  },
+  {
+    "name": "socks",
+    "countryOfProduction": "Liechtenstein",
+    "active": true,
+    "skus": [
+      {
+        "code": 6434,
+        "color": "blue",
+        "price": 49.06
+      },
+      {
+        "code": 1553,
+        "color": "red",
+        "price": 40.02
+      }
+    ]
+  },
+  {
+    "name": "car",
+    "countryOfProduction": "Sudan",
+    "active": false,
+    "skus": [
+      {
+        "code": 2864,
+        "color": "red",
+        "price": 10.65
+      },
+      {
+        "code": 2503,
+        "color": "purple",
+        "price": 40.16
+      },
+      {
+        "code": 6581,
+        "color": "green",
+        "price": 41.31
+      }
+    ]
+  },
+  {
+    "name": "shirt",
+    "countryOfProduction": "United Arab Emirates",
+    "active": true,
+    "skus": [
+      {
+        "code": 9644,
+        "color": "red",
+        "price": 40.49
+      },
+      {
+        "code": 9185,
+        "color": "red",
+        "price": 39.74
+      },
+      {
+        "code": 7061,
+        "color": "purple",
+        "price": 39.25
+      }
+    ]
+  },
+  {
+    "name": "pen",
+    "countryOfProduction": "Western Sahara",
+    "active": true,
+    "skus": [
+      {
+        "code": 2522,
+        "color": "blue",
+        "price": 32.11
+      },
+      {
+        "code": 6192,
+        "color": "red",
+        "price": 11.59
+      },
+      {
+        "code": 5007,
+        "color": "purple",
+        "price": 41.62
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "countryOfProduction": "Djibouti",
+    "active": false,
+    "skus": [
+      {
+        "code": 2980,
+        "color": "red",
+        "price": 18.96
+      },
+      {
+        "code": 6788,
+        "color": "purple",
+        "price": 10.47
+      },
+      {
+        "code": 8740,
+        "color": "red",
+        "price": 37.34
+      }
+    ]
+  },
+  {
+    "name": "eracer",
+    "countryOfProduction": "Czech Republic",
+    "active": true,
+    "skus": [
+      {
+        "code": 7096,
+        "color": "blue",
+        "price": 44.51
+      },
+      {
+        "code": 1685,
+        "color": "blue",
+        "price": 41.14
+      }
+    ]
+  }
+]
