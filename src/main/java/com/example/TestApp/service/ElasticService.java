@@ -39,7 +39,7 @@ public class ElasticService {
             sku.setProduct(product);
         }
         repository.save(product);
-        logger.info("Success save of product with id = {} into db",product.getId());
+        logger.info("success save of product with id = {} into db",product.getId());
 
         //////////////esClient saving/////////////////////
         ProductDTO productDTO = repository.findFirstByNameOrderByIdDesc(product.getName()).toProductDTO();
@@ -65,12 +65,16 @@ public class ElasticService {
                     .size(searchSize)
             );
             SearchResponse<ProductDTO> searchResponse = esClient.search(searchRequest, ProductDTO.class);
-
+            logger.info("successful attempt to get products from elastic");
             return searchResponse.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
         } catch (IOException e) {
             logger.error("error while trying to get elements from elastic");
             throw new GetProductException("Exception while trying to get elements from elastic");
         }
 
+    }
+
+    public boolean empty() {
+        return repository.count()==0;
     }
 }

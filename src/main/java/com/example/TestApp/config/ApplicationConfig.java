@@ -24,4 +24,8 @@ public class ApplicationConfig {
 
         return new ElasticsearchClient(transport);
     }
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
