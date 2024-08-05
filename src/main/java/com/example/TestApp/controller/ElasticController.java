@@ -1,7 +1,6 @@
 package com.example.TestApp.controller;
 
 import com.example.TestApp.DTO.ProductDTO;
-import com.example.TestApp.entity.Product;
 import com.example.TestApp.exception.GetProductException;
 import com.example.TestApp.exception.SaveException;
 import com.example.TestApp.response.MyErrorResponse;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("elastic")
@@ -40,9 +38,14 @@ public class ElasticController {
     public void load(){
        loadDataService.fetchDataAndSave();
     }
+//    @GetMapping("/search")
+//    public List<ProductDTO> searchByName(@RequestParam("name") String name){
+//        return service.searchByName(name);
+//    }
     @GetMapping("/search")
-    public List<ProductDTO> searchByName(@RequestParam("name") String name){
-        return service.searchByName(name);
+    public List<ProductDTO> searchByNameAndCountry(@RequestParam("name") String name,
+                                                   @RequestParam("country") String country){
+        return service.searchByNameAndCountry(name,country);
     }
 
     //~~~~~~~~~~~~~EXCEPTION HANDLING~~~~~~~~~~~~~~

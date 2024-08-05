@@ -2,23 +2,24 @@ package com.example.TestApp.service;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.ElasticsearchException;
+import co.elastic.clients.elasticsearch._types.query_dsl.MatchQuery;
+import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.elasticsearch.core.IndexResponse;
 import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
+import co.elastic.clients.json.JsonData;
 import com.example.TestApp.DTO.ProductDTO;
 import com.example.TestApp.entity.Product;
 import com.example.TestApp.entity.Sku;
 import com.example.TestApp.exception.GetProductException;
 import com.example.TestApp.exception.SaveException;
 import com.example.TestApp.repository.ProductRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,8 +38,6 @@ public class ElasticService {
     }
     @Transactional
     public void save(Product product){
-        logger.info("{} {} {} {}",product.getId(),product.getCountryOfProduction(),product.getName(),product.getSkus());
-
         if(product.getSkus()==null) {
             logger.error("Exception while saving product with id {}, product.sku == null", product.getId());
             throw new SaveException("Cant save product cause product.sku==null");
@@ -83,23 +82,35 @@ public class ElasticService {
 
     }
 
-    public List<ProductDTO> searchByName(String name){
-        SearchResponse<ProductDTO> response = null;
+    public List<ProductDTO> searchByNameAndCountry(String name, String countryOfProduction){
         try {
-            response = esClient.search(s -> s
+            Query byName = MatchQuery.of(m -> m
+                    .field("name")
+                    .query(name)
+            )._toQuery();
+
+// Search by max price
+            Query byCountry = MatchQuery.of(m -> m
+                    .field("countryOfProduction")
+                    .query(countryOfProduction)
+            )._toQuery();
+
+// Combine name and price queries to search the product index
+            SearchResponse<ProductDTO> response = esClient.search(s -> s
                             .index("products")
                             .query(q -> q
-                                    .match(t -> t
-                                            .field("name")
-                                            .query(name)
+                                    .bool(b -> b
+                                            .must(byName)
+                                            .must(byCountry)
                                     )
                             ),
                     ProductDTO.class
+
             );
+            return response.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return response.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
     }
 
     public boolean empty() {
