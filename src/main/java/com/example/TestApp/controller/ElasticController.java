@@ -36,9 +36,13 @@ public class ElasticController {
         return service.getAll();
     }
 
-    @GetMapping("/load")
+    @PostMapping("/load")
     public void load(){
        loadDataService.fetchDataAndSave();
+    }
+    @GetMapping("/search")
+    public List<ProductDTO> searchByName(@RequestParam("name") String name){
+        return service.searchByName(name);
     }
 
     //~~~~~~~~~~~~~EXCEPTION HANDLING~~~~~~~~~~~~~~

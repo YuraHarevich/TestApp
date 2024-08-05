@@ -83,6 +83,24 @@ public class ElasticService {
 
     }
 
+    public List<ProductDTO> searchByName(String name){
+        SearchResponse<ProductDTO> response = null;
+        try {
+            response = esClient.search(s -> s
+                            .index("products")
+                            .query(q -> q
+                                    .match(t -> t
+                                            .field("name")
+                                            .query(name)
+                                    )
+                            ),
+                    ProductDTO.class
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return response.hits().hits().stream().map(Hit::source).collect(Collectors.toList());
+    }
 
     public boolean empty() {
         return repository.count()==0;
